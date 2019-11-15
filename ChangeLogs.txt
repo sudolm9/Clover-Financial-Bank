@@ -1,0 +1,172 @@
+Please Import Database before testing!
+
+Coders: Yong Bum Kim and David Sapida
+
+Change Log
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+Version 1.0.0:
+	Implementation of Login and Registration Database (Complete)
+
+Version 1.0.1:
+	Separated Registration Page from Index.php (Complete)
+	Added Option for Withdraw and Deposit Buttons in Menu.php
+	Created modify.php to update values in database to simulate Withdraw/Deposit process (Work In Progress, still need to figure out how to update)
+
+
+Version 1.1.0:
+	Balance data can overwrite itself if exists.
+	Both databases will be accepted on MAC side phpMyAdmin
+	Register will be handled in a pop up window instead of a new window.
+	Working on Registration Windows to close itself when submitted
+
+Version 1.1.1:
+	Registration Function polished, added function to check the database after user
+	fills out all fields to see if that information already exists in the database.
+	Withdraw/Deposit functions are finally finished and functional!
+	Created function that will display an error if the user attempted to withdraw money
+	that will bring them to a negative value.
+
+Version 1.2.0:
+	Registration popup window will navigate to new close.php page
+	close.php will have close window button, once OnClick, the window will disappear
+
+Version 1.2.1:
+	Transfer Function (WIP)
+
+Version 1.2.2:
+	Transfer Function working on Mac side
+	Added style on close.php, modify.php, register.php, transfer.php
+
+Version 1.2.3:
+	Transfer Function Finalized
+	Added Floating Point values for displaying numbers
+
+Version 1.2.4:
+	Failed to add popup windows on transaction actions
+	Updated admin table for administrators
+	Admin will have a separate window to maintain user's data
+
+Version 1.2.5:
+	Created new pages for admin, when admin logs in, they will be directed to a admenu.php which is the Admin Home Menu, additional buttons have been added to go to different pages.
+	Implemented Function to get Certain Information in the Database based on Filtered Options through a Dropdown List (Cannot get the dropdown to appear)
+	Attempted implementation of Window Close on Logout.
+
+Version 1.2.6
+	Now Admin page functioning properly.
+		registerAdmin.php fixed
+		Redirects to sub-categories properly
+		closeAdmin.php redirects to Admin Login Portal
+
+Version 1.2.7
+	Fixed the code so it can recognize proper directories of subfiles
+	Organized files by putting them into subfolders
+
+Version 1.2.8
+	Display Users function implemented.
+
+Version 1.2.9
+	Created Confirm Password field and check for Registration for both Users/Admins
+	Created a Block User function which locks user accounts after 3 failed login attempts (via changing password, Work in Progress)
+	Created a Unblock User function in Admin Management, however search field does not work. (Work in Progress)
+
+Version 1.3.0
+	Added additional code in Transfer.php to check if a user is trying to transfer money from a account that will cause the current balance to go negative.
+	Added Password Change function in user accounts.
+	Search Function in Admin account and unblocking users are currently work in progress
+	Added Cancel option for Transfer/Withdraw/Deposit Account Functions
+  	Removed accounterror.php due to new implementation of messaging system, using the refresh method.
+	Created additional variable in database (logcounter) as a counter to check on how many failed logins a user has had in a row, trying to implement block user func on 3 	failed attempts
+	Still trying to work on it.
+
+Version 1.3.1
+	unblockuser.php redirects properly
+	changeuserpass.php resets password and update the database correcly.
+
+Version 1.3.2
+	Redirecting to main menu from unblockuser is now functioning properly.
+	Working on Delete User - Yong
+
+Version 1.3.3
+	Login Counter is now operational - David
+	Old Password field is now working - David
+	Editing unblockuser.php
+
+Version 1.3.4
+	Skipped
+
+Version 1.3.5
+	unblockuser.php has been changed and changepass.php in admin folder has been deleted due to the changes made in unblockuser.php the change is done in one page
+	unblockeruser.php now shows Name/Username/Amount of Failed Login Attempts
+	unblockuser.php unblock feature is functional on same page, clicking yes will change searched user's password to a RANDOM password and reset login counters back to 	original value, giving them default tries to login.
+	Login Counter now changes user password to RANDOM instead of a set password if their account is blocked due to failed login attempts.
+
+Version 1.3.6
+	When register as an user, logcounter now sets to 4
+	shows random generated password in red bolded. (Unblock User)
+	deluser now working.
+	As a workaround admin will be redirected to the login page (after deleteuser)
+
+Version 1.3.7
+	index.php has a new layout and animations integrated (in Development)
+	MAJOR Bug in Login Page, when entering random account information that does not exist, will cause the error to display that their account is blocked.
+	styles.css is created.
+	http://animista.net/play/basic/slide, this website provides quick and easy animation css code.
+
+Version 1.4.0
+	Major Bug fixed in Login Page.
+	menu.php layout changed (In Development)
+	Transfer button in menu.php checks if you have checking or savings before going in. If both are 0 then it will not allow user to enter transfer.php
+	Options will show Bank/Account Funcs (JavaSCript)
+	Selecting Account will preview withdraw and deposit funcs.
+
+Version 1.4.1
+	administrator page redesigned
+	Welcome message only pops up when first visited.
+	-----REDESINING ADMIN-----
+	register.php done
+	admin 97% (closeAdmin.php needs to be done)
+
+Version 1.4.2
+	Skipped
+
+Version 1.4.3
+	Index/Admin style layout is about 80% done.
+
+Version 1.4.4
+	Index/Admin is about 99.0% done.
+
+Version 1.4.5
+	All Main Website Pages have now been styled accordingly
+	changepass.php was modified in favor of Cancel button, and revised code to allow user to cancel and remove required features on text fields.
+	Will update transfer.php to temporarily fix bug, will only allow user to transfer certain amount of funds.
+
+Version 1.4.6
+	transfer.php was modified to not allow the user to make a transfer greather than or equal to 7 digits. New Errors have been created to address the user.
+	Styling is about 99.5% done.
+
+	User Benchmark Examination 1 - Results: Failed
+	----------------------------------------------
+		Major Notices:
+		- Registration Page for some reason registered an account with the same UserID/Email
+		- Transfer.php on some numbers it still adds to negative value when a large number is inputted
+
+		Minor Notices:
+		- Some styles aren't formatted properly
+		- Admin layout is a bit sketchy especially in Account Management
+
+Version 1.4.7
+		Style applied to close.php and also made close.php close on startup after 5 seconds
+		Admin/Website has gotten a total style makeover.
+		changepass.php function has been fixed.
+
+
+		User Benchmark Examination 2 - Results: Failed
+		----------------------------------------------
+			Major Notices:
+			- Registration STILL registers users even though their information exists in the database.
+			- Display Users function is BROKEN.
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Please update README after Modifying Changes to the Website
